@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[myFor]'
+  selector: '[myFor]' 
 })
 export class ForDirective implements OnInit {
 
