@@ -1,6 +1,8 @@
 import { validateVerticalPosition } from '@angular/cdk/overlay';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+import { Product } from './modelo/Product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +17,19 @@ export class ProductService {
       horizontalPosition: "right",
       verticalPosition: "top"
     })
+  }
+
+  create(produto: Product){
+    let produtos = this.listar()
+    produto.id = new Date().getTime()
+    produtos.push(produto)
+    localStorage['produtos'] = JSON.stringify(produtos)
+  }
+
+  listar(){
+    const produtos = localStorage['produtos']
+    return produtos? JSON.parse(produtos) : [];
+
+
   }
 }
