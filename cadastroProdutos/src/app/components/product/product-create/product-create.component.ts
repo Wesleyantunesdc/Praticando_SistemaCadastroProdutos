@@ -18,14 +18,14 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  produto: Product = {
+  product: Product = {
     name : '',
     price : null
   }
 
   createProduct(): void{
-    this.productService.create(this.produto)
-    this.productService.showOnConsole('Produto criado')
+    this.productService.create(this.product)
+    this.productService.showOnConsole(this.product.name)
     this.router.navigate(['/produtos'])
   }
   
