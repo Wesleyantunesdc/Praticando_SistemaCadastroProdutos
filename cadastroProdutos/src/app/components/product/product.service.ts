@@ -29,7 +29,5 @@ export class ProductService {
   listar(){
     const produtos = localStorage['produtos']
     return produtos? JSON.parse(produtos) : [];
-
-
   }
 }
