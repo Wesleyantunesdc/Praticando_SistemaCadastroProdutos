@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product-read.component.html',
   styleUrls: ['./product-read.component.css']
 })
-export class ProductReadComponent implements OnInit {
 
-  products: Product[]
+export class ProductReadComponent implements OnInit {
+  private products: Product[]
+  public dataSource = []
+  displayedColumns: string[] = ['id','name', 'price']
 
   constructor(private produtoService:ProductService) { }
 
   ngOnInit(): void {
-    this.products = this.produtoService.listar();
-    console.log(this.products)
+    this.products = this.produtoService.listar()
+    this.dataSource = this.products
   }
 
 }
