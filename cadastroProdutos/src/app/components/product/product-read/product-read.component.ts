@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductReadComponent implements OnInit {
   private products: Product[]
   public dataSource = []
-  displayedColumns: string[] = ['id','name', 'price']
+  displayedColumns: string[] = ['id','name', 'price','action']
 
   constructor(private produtoService:ProductService) { }
 
