@@ -25,6 +25,7 @@ import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import {MatTableModule} from '@angular/material/table';
+import { ProductUpdadeComponent } from './components/product/product-updade/product-updade.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatTableModule} from '@angular/material/table';
     RedDirective,
     ForDirective,
     ProductCreateComponent,
-    ProductReadComponent
+    ProductReadComponent,
+    ProductUpdadeComponent
   ],
   imports: [
     BrowserModule,

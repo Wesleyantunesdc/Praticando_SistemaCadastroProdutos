@@ -1,3 +1,4 @@
+import { ListRange } from '@angular/cdk/collections';
 import { validateVerticalPosition } from '@angular/cdk/overlay';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -26,8 +27,29 @@ export class ProductService {
     localStorage['produtos'] = JSON.stringify(produtos)
   }
 
-  listar(){
+  listar():Product[]{
     const produtos = localStorage['produtos']
-    return produtos? JSON.parse(produtos) : [];
+    return produtos? JSON.parse(produtos) : []
+  }
+
+  obterPorId(id:number){
+    const produtos = this.listar()
+    return produtos.find( p => p.id === id)
+  }
+
+  atualizar(produto: Product){
+    const produtos: Product[] = this.listar()
+    produtos.forEach((obj, index, objs) => {
+      if(produto.id === obj.id){
+        objs[index] = produto
+      }
+    })
+    localStorage['produtos'] = JSON.stringify(produtos)
+  }
+
+  deletar(id){
+    let produtos: Product[] = this.listar()
+    produtos  = produtos.filter( produto => produto.id !== id)
+    localStorage['produtos'] = JSON.stringify(produtos)
   }
 }
