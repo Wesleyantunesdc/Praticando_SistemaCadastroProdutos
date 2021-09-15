@@ -47,9 +47,9 @@ export class ProductService {
     localStorage['produtos'] = JSON.stringify(produtos)
   }
 
-  deletar(id){
+  deletar(product:Product){
     let produtos: Product[] = this.listar()
-    produtos  = produtos.filter( produto => produto.id !== id)
+    produtos  = produtos.filter( produto => produto.id !== product.id)
     localStorage['produtos'] = JSON.stringify(produtos)
   }
 }

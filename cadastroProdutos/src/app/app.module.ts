@@ -26,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import {MatTableModule} from '@angular/material/table';
 import { ProductUpdadeComponent } from './components/product/product-updade/product-updade.component';
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductUpdadeComponent } from './components/product/product-updade/prod
     ForDirective,
     ProductCreateComponent,
     ProductReadComponent,
-    ProductUpdadeComponent
+    ProductUpdadeComponent,
+    ProductDeleteComponent
   ],
   imports: [
     BrowserModule,
