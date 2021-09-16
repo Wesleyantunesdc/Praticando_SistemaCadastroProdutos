@@ -28,6 +28,11 @@ import {MatTableModule} from '@angular/material/table';
 import { ProductUpdadeComponent } from './components/product/product-updade/product-updade.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
+import localePt from '@angular/common/locales/pt';
+
+
+registerLocaleData(localePt)
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +63,10 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
     FormsModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

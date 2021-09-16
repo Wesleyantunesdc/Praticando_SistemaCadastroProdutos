@@ -12,11 +12,12 @@ export class ProductService {
 
   constructor(private snackBar: MatSnackBar) { }
 
-  showOnConsole(msg: string): void{
+  showOnConsole(msg: string, isError: boolean = false): void{
     this.snackBar.open(msg, 'x',{
       duration: 3000,
       horizontalPosition: "right",
-      verticalPosition: "top"
+      verticalPosition: "top",
+      panelClass: isError? ['msg-error'] : ['msg-sucess']
     })
   }
 
